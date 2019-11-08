@@ -4,7 +4,7 @@
 from setuptools import setup
 
 setup(name='crmsh',
-      version='3.0.1',
+      version='3.0.4',
       description='Command-line interface for High-Availability cluster management',
       author='Kristoffer Gronlund',
       author_email='kgronlund@suse.com',

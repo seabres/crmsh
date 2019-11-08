@@ -36,15 +36,19 @@ Name:           crmsh
 Summary:        High Availability cluster command-line interface
 License:        GPL-2.0+
 Group:          %{pkg_group}
-Version:        2.3.0
-Release:        0
-Url:            http://crmsh.github.io
+Version:        3.0.4
+Release:        1.el7
+Packager:       rainer.brestan@frequentis.com
+Url:            http://github.com/seabres/crmsh
 Source0:        %{name}-%{version}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
+BuildArch:      noarch
 %if 0%{?suse_version}
 # Requiring pacemaker makes crmsh harder to build on other distributions,
 # and is mostly a convenience feature. So only do it for SUSE.
 Requires(pre):  pacemaker
+%else
+Requires:       pacemaker-cli
 %endif
 Requires:       %{name}-scripts >= %{version}-%{release}
 Requires:       /usr/bin/which
